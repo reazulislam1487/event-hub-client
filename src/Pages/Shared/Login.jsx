@@ -31,10 +31,13 @@ const Login = () => {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/auth/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://event-hub-server-one.vercel.app/auth/login",
+        {
+          email,
+          password,
+        }
+      );
 
       if (res.data) {
         Swal.fire({
@@ -161,7 +164,7 @@ const Login = () => {
 
             <button
               type="submit"
-              className="w-full font-semibold py-3 rounded-lg transition"
+              className="w-full cursor-pointer font-semibold py-3 rounded-lg transition"
               style={{
                 backgroundColor: "#2C3E50",
                 color: "#FFF9F0",
@@ -185,7 +188,7 @@ const Login = () => {
               Don’t have an account?{" "}
               <Link
                 to="/register"
-                className="underline font-medium"
+                className="underline   font-medium"
                 style={{ color: "#00B894" }}
               >
                 Register

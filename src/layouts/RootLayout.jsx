@@ -9,7 +9,9 @@ const RootLayout = () => {
     <>
       <ScrollToTop></ScrollToTop>
       <Navbar></Navbar>
-      <Outlet></Outlet>
+      <div className="min-h-screen">
+        <Outlet></Outlet>
+      </div>
       <footer>
         <Footer></Footer>
       </footer>

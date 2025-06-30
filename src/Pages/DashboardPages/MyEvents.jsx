@@ -17,7 +17,7 @@
 //   console.log(user);
 //   useEffect(() => {
 //     if (user?.email) {
-//       axios(`http://localhost:5000/my-events?email=${user.email}`)
+//       axios(`https://event-hub-server-one.vercel.app/my-events?email=${user.email}`)
 //         .then((res) => {
 //           setEvents(res.data);
 //           setLoading(false);
@@ -42,7 +42,7 @@
 //     };
 
 //     axios
-//       .put(`http://localhost:5000/my-events/${selectedEvent._id}`, updatedData)
+//       .put(`https://event-hub-server-one.vercel.app/my-events/${selectedEvent._id}`, updatedData)
 //       .then((res) => {
 //         if (res.data.modifiedCount > 0) {
 //           setEvents((prev) =>
@@ -77,7 +77,7 @@
 //     }).then((result) => {
 //       if (result.isConfirmed) {
 //         axios
-//           .delete(`http://localhost:5000/my-events/${id}`)
+//           .delete(`https://event-hub-server-one.vercel.app/my-events/${id}`)
 //           .then(() => {
 //             setEvents((prev) => prev.filter((e) => e._id !== id));
 //             Swal.fire("Deleted!", "Your event has been deleted.", "success");
@@ -236,7 +236,9 @@ const MyEvents = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios(`http://localhost:5000/my-events?email=${user.email}`)
+      axios(
+        `https://event-hub-server-one.vercel.app/my-events?email=${user.email}`
+      )
         .then((res) => {
           setEvents(res.data);
           setLoading(false);
@@ -260,7 +262,10 @@ const MyEvents = () => {
     };
 
     axios
-      .put(`http://localhost:5000/my-events/${selectedEvent._id}`, updatedData)
+      .put(
+        `https://event-hub-server-one.vercel.app/my-events/${selectedEvent._id}`,
+        updatedData
+      )
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           setEvents((prev) =>
@@ -295,7 +300,7 @@ const MyEvents = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/my-events/${id}`)
+          .delete(`https://event-hub-server-one.vercel.app/my-events/${id}`)
           .then(() => {
             setEvents((prev) => prev.filter((e) => e._id !== id));
             Swal.fire("Deleted!", "Your event has been deleted.", "success");

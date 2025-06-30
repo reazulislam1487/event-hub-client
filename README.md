@@ -1,6 +1,6 @@
 # 📅 Event Hub
 
-![Event Hub Screenshot](https://i.postimg.cc/SxQMYCHQ/Screenshot-2025-06-30-035708.png)
+![Event Hub Screenshot](https://i.postimg.cc/0NqpYcjm/Screenshot-2025-06-30-232911.png)
 
 ---
 
@@ -14,7 +14,7 @@ Users can register/login, add events, browse events with filters, join events (o
 
 ### 🌐 Live & Source Code Links
 
-- 🔗 **Live Site:** [https://eventhub-by-reaz.netlify.app](https://eventhub-by-reaz.netlify.app)
+- 🔗 **Live Site:** [https://event-hub-by-reaz.netlify.app/](https://event-hub-by-reaz.netlify.app/)
 - 💻 **Client Repository:** [GitHub - Client](https://github.com/reazulislam/event-hub-clinet)
 - 🛠️ **Server Repository:** [GitHub - Server](https://github.com/reazulislam/event-hub-sever)
 
@@ -88,26 +88,6 @@ Users can register/login, add events, browse events with filters, join events (o
   "sweetalert2": "^11.10.5",
   "tailwindcss": "^3.4.1"
 }
-💻 Getting Started (Run Locally)
-📁 Clone and install client:
-git clone https://github.com/reazulislam/Event-Hub-Client.git
-cd Event-Hub-Client
-npm install
-npm run dev
+
+
 ```
-
-📁 Clone and install server:
-bash
-Copy
-Edit
-git clone https://github.com/reazulislam/Event-Hub-Server.git
-cd Event-Hub-Server
-npm install
-npm run dev
-
-
-🔠 Server .env file:
-
-PORT=5000
-DB_USER=your_mongodb_user
-DB_PASS=your_mongodb_pass

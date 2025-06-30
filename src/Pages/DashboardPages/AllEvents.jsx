@@ -35,7 +35,7 @@
 //     setLoading(true);
 //     axios
 //       .get(
-//         `http://localhost:5000/events?search=${searchText}&sort=${sortOrder}`
+//         `https://event-hub-server-one.vercel.app/events?search=${searchText}&sort=${sortOrder}`
 //       )
 //       .then((res) => {
 //         setEvents(res.data);
@@ -191,7 +191,7 @@ const AllEvents = () => {
     setLoading(true);
     axios
       .get(
-        `http://localhost:5000/events?search=${searchText}&sort=${sortOrder}`
+        `https://event-hub-server-one.vercel.app/events?search=${searchText}&sort=${sortOrder}`
       )
       .then((res) => {
         setEvents(res.data);

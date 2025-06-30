@@ -1,110 +1,3 @@
-// import React from "react";
-// import Swal from "sweetalert2";
-// import "react-datepicker/dist/react-datepicker.css";
-
-// import useAuth from "../../hooks/useAuth";
-// import usePageTitle from "../../hooks/usePageTitle";
-// import axios from "axios";
-// import { useNavigate } from "react-router";
-
-// const AddMarathon = () => {
-//   usePageTitle("Add Marathon");
-
-//   const { user } = useAuth();
-//   const navigate = useNavigate();
-//   const handleAddMarathon = async (e) => {
-//     e.preventDefault();
-//     const form = e.target;
-//     const formData = new FormData(form);
-//     const data = Object.fromEntries(formData.entries());
-
-//     // Build the marathon object from form data
-//     const newMarathon = {
-//       ...data,
-//       name: user?.name || "",
-//       createdBy: user?.email,
-//       attendeeCount: 0,
-//     };
-
-//     try {
-//       const res = await axios.post(
-//         "http://localhost:5000/add/event",
-//         newMarathon
-//       );
-
-//       if (res.data.insertedId) {
-//         Swal.fire({
-//           position: "center",
-//           icon: "success",
-//           title: "Marathon added successfully!",
-//           showConfirmButton: false,
-//           timer: 1000,
-//         });
-//         navigate("/dashboard/my-events");
-//         form.reset();
-//       }
-//     } catch (err) {
-//       console.error(err);
-//       Swal.fire("Error", "Something went wrong!", "error");
-//     }
-//   };
-
-//   return (
-//     <div className="px-6 py-8 max-w-5xl mx-auto bg-white shadow rounded-lg">
-//       <h2 className="text-3xl text-center font-bold mb-6 text-blue-700">
-//         Add New Event
-//       </h2>
-//       <form onSubmit={handleAddMarathon} className="space-y-6">
-//         <input
-//           type="text"
-//           name="title"
-//           placeholder="Marathon Title"
-//           className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-//           required
-//         />
-
-//         <input
-//           type="text"
-//           name="name"
-//           value={user?.name}
-//           readOnly
-//           className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-//         />
-
-//         <input
-//           type="datetime-local"
-//           name="datetime"
-//           required
-//           className="input input-bordered w-full"
-//         />
-
-//         <input
-//           type="text"
-//           name="location"
-//           placeholder="Location"
-//           className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-//           required
-//         />
-
-//         <textarea
-//           name="description"
-//           placeholder="Description"
-//           required
-//           className="textarea textarea-bordered w-full"
-//         ></textarea>
-
-//         <button
-//           type="submit"
-//           className="bg-blue-600 hover:bg-blue-700 text-white py-3 cursor-pointer px-8 rounded-lg font-semibold transition"
-//         >
-//           Add Event
-//         </button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default AddMarathon;
 import React from "react";
 import Swal from "sweetalert2";
 import "react-datepicker/dist/react-datepicker.css";
@@ -134,7 +27,7 @@ const AddMarathon = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/add/event",
+        "https://event-hub-server-one.vercel.app/add/event",
         newMarathon
       );
       if (res.data.insertedId) {

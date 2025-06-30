@@ -5,14 +5,13 @@ import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://event-hub-server-one.vercel.app",
 });
 
 const useAxiosSecure = () => {
   const { user, signOutUser } = useAuth();
   const navigate = useNavigate();
 
-  
   useEffect(() => {
     if (!user?.accessToken) return;
 

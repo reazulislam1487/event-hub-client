@@ -11,9 +11,12 @@ const JoinButton = ({ eventId, userEmail, initialJoined }) => {
 
     try {
       setLoading(true);
-      const res = await axios.patch(`http://localhost:5000/events/${eventId}`, {
-        email: userEmail,
-      });
+      const res = await axios.patch(
+        `https://event-hub-server-one.vercel.app/events/${eventId}`,
+        {
+          email: userEmail,
+        }
+      );
 
       if (res.data.message === "Successfully joined the event") {
         setJoined(true);

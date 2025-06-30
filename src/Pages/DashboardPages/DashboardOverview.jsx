@@ -1,26 +1,27 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { Link } from "react-router";
 import { FaCalendarAlt, FaUserAlt, FaListUl } from "react-icons/fa";
+import axios from "axios";
 
 const DashboardOverview = () => {
   const { user } = useAuth();
-  const instance = useAxiosSecure();
   const [allEventsCount, setAllEventsCount] = useState(0);
   const [myEventsCount, setMyEventsCount] = useState(0);
 
   useEffect(() => {
-    instance("/events")
+    axios("https://event-hub-server-one.vercel.app/events")
       .then((res) => setAllEventsCount(res.data.length))
       .catch(console.error);
 
     if (user?.email) {
-      instance(`/my-events?email=${user.email}`)
+      axios(
+        `https://event-hub-server-one.vercel.app/my-events?email=${user.email}`
+      )
         .then((res) => setMyEventsCount(res.data.length))
         .catch(console.error);
     }
-  }, [user?.email, instance]);
+  }, [user?.email]);
 
   return (
     <div className="px-6 py-10 max-w-6xl mx-auto bg-[#FFF9F0] rounded-xl shadow-sm">
@@ -30,40 +31,39 @@ const DashboardOverview = () => {
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-  {/* All Events Card */}
-  <Link
-    to="/dashboard/all-events"
-    className="bg-white border border-[#E5E7EB] p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all text-center flex flex-col items-center gap-3"
-  >
-    <div className="w-14 h-14 rounded-full bg-[#E6F4EA] flex items-center justify-center">
-      <FaCalendarAlt className="text-[#2F855A] text-2xl" />
-    </div>
-    <h4 className="text-lg font-semibold text-[#2D3748]">All Events</h4>
-    <p className="text-3xl font-bold text-[#2F855A]">{allEventsCount}</p>
-  </Link>
+        {/* All Events Card */}
+        <Link
+          to="/dashboard/all-events"
+          className="bg-white border border-[#E5E7EB] p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all text-center flex flex-col items-center gap-3"
+        >
+          <div className="w-14 h-14 rounded-full bg-[#E6F4EA] flex items-center justify-center">
+            <FaCalendarAlt className="text-[#2F855A] text-2xl" />
+          </div>
+          <h4 className="text-lg font-semibold text-[#2D3748]">All Events</h4>
+          <p className="text-3xl font-bold text-[#2F855A]">{allEventsCount}</p>
+        </Link>
 
-  {/* My Events Card */}
-  <Link
-    to="/dashboard/my-events"
-    className="bg-white border border-[#E5E7EB] p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all text-center flex flex-col items-center gap-3"
-  >
-    <div className="w-14 h-14 rounded-full bg-[#E0F7F2] flex items-center justify-center">
-      <FaListUl className="text-[#00B894] text-2xl" />
-    </div>
-    <h4 className="text-lg font-semibold text-[#2D3748]">My Events</h4>
-    <p className="text-3xl font-bold text-[#00B894]">{myEventsCount}</p>
-  </Link>
+        {/* My Events Card */}
+        <Link
+          to="/dashboard/my-events"
+          className="bg-white border border-[#E5E7EB] p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all text-center flex flex-col items-center gap-3"
+        >
+          <div className="w-14 h-14 rounded-full bg-[#E0F7F2] flex items-center justify-center">
+            <FaListUl className="text-[#00B894] text-2xl" />
+          </div>
+          <h4 className="text-lg font-semibold text-[#2D3748]">My Events</h4>
+          <p className="text-3xl font-bold text-[#00B894]">{myEventsCount}</p>
+        </Link>
 
-  {/* Account Info Card */}
-  <div className="bg-white border border-[#E5E7EB] p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all text-center flex flex-col items-center gap-3">
-    <div className="w-14 h-14 rounded-full bg-[#FFF5E1] flex items-center justify-center">
-      <FaUserAlt className="text-[#FDCB6E] text-2xl" />
-    </div>
-    <h4 className="text-lg font-semibold text-[#2D3748]">Account</h4>
-    <p className="text-sm text-gray-500">{user?.email}</p>
-  </div>
-</div>
-
+        {/* Account Info Card */}
+        <div className="bg-white border border-[#E5E7EB] p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all text-center flex flex-col items-center gap-3">
+          <div className="w-14 h-14 rounded-full bg-[#FFF5E1] flex items-center justify-center">
+            <FaUserAlt className="text-[#FDCB6E] text-2xl" />
+          </div>
+          <h4 className="text-lg font-semibold text-[#2D3748]">Account</h4>
+          <p className="text-sm text-gray-500">{user?.email}</p>
+        </div>
+      </div>
 
       {/* Profile Card */}
       <div className="bg-white border border-[#E5E7EB] rounded-xl shadow-sm p-6 flex flex-col items-center text-center max-w-md mx-auto">

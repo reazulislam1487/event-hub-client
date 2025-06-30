@@ -28,7 +28,7 @@ const AllEvents = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5000/events?sort=${sortOrder}`)
+      .get(`https://event-hub-server-one.vercel.app/events?sort=${sortOrder}`)
       .then((res) => {
         setEvents(res.data);
         setLoading(false);

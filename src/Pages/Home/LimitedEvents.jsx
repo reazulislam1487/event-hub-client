@@ -8,7 +8,7 @@ const LimitedEvents = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/events/limited")
+      .get("https://event-hub-server-one.vercel.app/events/limited")
       .then((res) => {
         setEvents(res.data);
         setLoading(false);
