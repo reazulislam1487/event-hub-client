@@ -43,8 +43,7 @@ const UpComingEvents = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold"
         >
-          🔔 Upcoming <span className="text-[#F6C26B]">Event Hub</span>{" "}
-          Highlights
+          Upcoming <span className="text-[#F6C26B]">Event Hub</span> Highlights
         </motion.h2>
         <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
           Discover exciting gatherings across Bangladesh — from tech expos to

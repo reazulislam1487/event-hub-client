@@ -13,7 +13,7 @@ const HowItWorksAlt = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-extrabold text-center mb-14"
         >
-          🚀 Your Event Journey with{" "}
+           Your Event Journey with{" "}
           <span className="text-[#2F855A]">Event Hub</span>
         </motion.h2>
 
