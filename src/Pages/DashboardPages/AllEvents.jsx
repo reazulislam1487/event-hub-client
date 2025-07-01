@@ -154,7 +154,7 @@ const AllEvents = () => {
           onChange={(e) => setDateFilter(e.target.value)}
           className="border border-[#2C3E50] rounded-md px-5 py-3 text-[#2C3E50] focus:ring-2 focus:ring-[#FDCB6E] w-full md:w-56"
         >
-          <option value="">All Dates</option>
+          <option value="">Select a date range</option>
           <option value="today">Today</option>
           <option value="thisWeek">Current Week</option>
           <option value="lastWeek">Last Week</option>
