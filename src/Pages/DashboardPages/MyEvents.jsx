@@ -142,13 +142,13 @@ const MyEvents = () => {
                     setSelectedEvent(event);
                     setShowUpdateModal(true);
                   }}
-                  className="flex items-center gap-1 text-sm px-3 py-1 bg-[#2F855A] text-white rounded hover:bg-[#276749] transition"
+                  className="flex cursor-pointer items-center gap-1 text-sm px-3 py-1 bg-[#2F855A] text-white rounded hover:bg-[#276749] transition"
                 >
                   <FaEdit /> Update
                 </button>
                 <button
                   onClick={() => handleDelete(event._id)}
-                  className="flex items-center gap-1 text-sm px-3 py-1 bg-[#E53E3E] text-white rounded hover:bg-red-700 transition"
+                  className="flex  cursor-pointer items-center gap-1 text-sm px-3 py-1 bg-[#E53E3E] text-white rounded hover:bg-red-700 transition"
                 >
                   <FaTrash /> Delete
                 </button>
@@ -165,7 +165,7 @@ const MyEvents = () => {
             onSubmit={handleUpdate}
             className="bg-white p-6 rounded-xl shadow-lg w-full max-w-2xl grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
-            <h3 className="col-span-2 text-xl font-bold text-[#2F855A] text-center mb-2">
+            <h3 className="col-span-2 cursor-pointer text-xl font-bold text-[#2F855A] text-center mb-2">
               Update Event
             </h3>
 
@@ -209,13 +209,13 @@ const MyEvents = () => {
               <button
                 type="button"
                 onClick={() => setShowUpdateModal(false)}
-                className="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400"
+                className="px-4 py-2 cursor-pointer bg-gray-300 text-gray-800 rounded hover:bg-gray-400"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 bg-[#2F855A] text-white rounded hover:bg-[#276749]"
+                className="px-4 py-2 cursor-pointer bg-[#2F855A] text-white rounded hover:bg-[#276749]"
               >
                 Save
               </button>

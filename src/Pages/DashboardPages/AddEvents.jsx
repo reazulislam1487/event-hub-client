@@ -142,7 +142,7 @@ const AddMarathon = () => {
         <div className="text-center pt-2">
           <button
             type="submit"
-            className="bg-[#2F855A] hover:bg-[#276749] text-white px-8 py-3 rounded-lg font-semibold transition"
+            className="bg-[#2F855A] cursor-pointer hover:bg-[#276749] text-white px-8 py-3 rounded-lg font-semibold transition"
           >
             Add Event
           </button>

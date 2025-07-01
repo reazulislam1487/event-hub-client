@@ -126,14 +126,14 @@ const AllEvents = () => {
           />
           <button
             onClick={handleSearch}
-            className="bg-[#00B894] text-white px-2 py-3 rounded-r-md hover:bg-[#019D7E] transition"
+            className="bg-[#00B894] text-white cursor-pointer px-2 py-3 rounded-r-md hover:bg-[#019D7E] transition"
             aria-label="Search"
           >
             Search
           </button>
           <button
             onClick={handleClear}
-            className="ml-4 bg-[#FDCB6E] text-[#2C3E50] px-4 py-3 rounded-md hover:bg-[#F6B745] transition"
+            className="ml-4 bg-[#FDCB6E] cursor-pointer text-[#2C3E50] px-4 py-3 rounded-md hover:bg-[#F6B745] transition"
             aria-label="Clear Filters"
           >
             Clear
@@ -143,7 +143,7 @@ const AllEvents = () => {
         <select
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
-          className="border border-[#2C3E50] rounded-md px-5 py-3 text-[#2C3E50] focus:ring-2 focus:ring-[#FDCB6E] w-full md:w-48"
+          className="border border-[#2C3E50] cursor-pointer rounded-md px-5 py-3 text-[#2C3E50] focus:ring-2 focus:ring-[#FDCB6E] w-full md:w-48"
         >
           <option value="desc">Newest Events</option>
           <option value="asc">Oldest Events</option>
@@ -152,7 +152,7 @@ const AllEvents = () => {
         <select
           value={dateFilter}
           onChange={(e) => setDateFilter(e.target.value)}
-          className="border border-[#2C3E50] rounded-md px-5 py-3 text-[#2C3E50] focus:ring-2 focus:ring-[#FDCB6E] w-full md:w-56"
+          className="border border-[#2C3E50] cursor-pointer rounded-md px-5 py-3 text-[#2C3E50] focus:ring-2 focus:ring-[#FDCB6E] w-full md:w-56"
         >
           <option value="">Select a date range</option>
           <option value="today">Today</option>
